@@ -1,8 +1,8 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 export function useScrollReveal(threshold = 0.12, rootMargin = '0px 0px -60px 0px') {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -26,5 +26,5 @@ export function useScrollReveal(threshold = 0.12, rootMargin = '0px 0px -60px 0p
     return () => obs.disconnect();
   }, [threshold, rootMargin]);
 
-  return [ref, visible];
+  return [ref, visible] as [React.RefObject<HTMLDivElement>, boolean];
 }
