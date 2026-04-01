@@ -3,9 +3,9 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { FaPlus } from 'react-icons/fa';
 
-const ProjekcoNavbar = () => {
-  const [active, setActive] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+const ProjekcoNavbar: React.FC = () => {
+  const [active, setActive] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -14,13 +14,14 @@ const ProjekcoNavbar = () => {
   }, []);
 
   useEffect(() => {
-    const items = document.querySelectorAll('.menu-item-has-children > a');
-    const handleClick = (event) => {
+    const items = document.querySelectorAll<HTMLAnchorElement>('.menu-item-has-children > a');
+    const handleClick = (event: MouseEvent) => {
       event.preventDefault();
-      const subMenu = event.currentTarget.parentElement?.querySelector('.sub-menu');
+      const target = event.currentTarget as HTMLAnchorElement;
+      const subMenu = target.parentElement?.querySelector('.sub-menu');
       if (subMenu) {
         subMenu.classList.toggle('active');
-        event.currentTarget.classList.toggle('open');
+        target.classList.toggle('open');
       }
     };
     items.forEach(item => item.addEventListener('click', handleClick));
