@@ -15,7 +15,7 @@ const ProjekcoCTA = () => {
         .pk-cta-btn-secondary:hover { background:#EDE8DF!important; border-color:#8B7355!important; }
       `}</style>
       <section id="demo" style={{ background:'#fff', padding:'100px 24px', borderBottom:'1px solid #E8DFD0' }}>
-        <div ref={ref} style={{ maxWidth:760, margin:'0 auto', textAlign:'center', opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(40px)', transition:'opacity 0.8s ease, transform 0.8s ease' }}>
+        <div ref={ref} style={{ maxWidth:'100%', margin:'0 auto', textAlign:'center', opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(40px)', transition:'opacity 0.8s ease, transform 0.8s ease' }}>
           <div style={{ background:'linear-gradient(135deg, #F5F0E8 0%, #EDE8DF 100%)', border:'1px solid #E8DFD0', borderRadius:24, padding:'72px 48px', position:'relative', overflow:'hidden' }}>
 
             {/* Decorative circle */}
@@ -26,7 +26,7 @@ const ProjekcoCTA = () => {
             <h2 style={{ fontSize:'clamp(26px,3.5vw,44px)', fontWeight:800, color:'#1A1A1A', lineHeight:1.15, letterSpacing:'-1px', marginBottom:16, position:'relative' }}>
               Turn Your Business<br />Into a System
             </h2>
-            <p style={{ color:'#666', fontSize:17, lineHeight:1.8, maxWidth:480, margin:'0 auto 40px', position:'relative' }}>
+            <p style={{ color:'#666', fontSize:17, lineHeight:1.8, maxWidth:'100%', margin:'0 auto 40px', position:'relative' }}>
               Stop relying on scattered tools and manual coordination.
               Run your operations with clarity, structure, and confidence.
             </p>
