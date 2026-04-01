@@ -84,8 +84,8 @@ const ProjekcoNavbar = () => {
           </ul>
 
           <div className="pk-nav-right">
-            <Link href="/login" className="pk-btn-login">Log In</Link>
-            <Link href="/request-demo" className="pk-btn-demo">
+            <Link href="/" className="pk-btn-login">Log In</Link>
+            <Link href="/" className="pk-btn-demo">
               Request a Demo <FaPlus size={11} />
             </Link>
           </div>
