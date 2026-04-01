@@ -1,18 +1,12 @@
-import BootstrapInit from "@/helper/BootstrapInit";
-import "react-modal-video/scss/modal-video.scss";
-import "./font.css";
-import "./globals.scss";
-
 export const metadata = {
-  title: "Service || AglieTech - IT Solutions & Technology NEXT JS Template",
+  title: 'Projekco — Systemize Your Service Business',
   description:
-    "Agiletech provide you to build the best agency, app, business, digital, it services, it solutions, network solution, startup, technology, technology company, technology service template.",
+    'Projekco is an operations management platform built for pest control, cleaning, and handyman businesses. Manage jobs, teams, clients, and reports in one system.',
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <BootstrapInit />
       <body suppressHydrationWarning={true}>{children}</body>
     </html>
   );

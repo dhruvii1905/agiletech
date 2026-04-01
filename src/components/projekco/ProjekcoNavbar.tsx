@@ -22,7 +22,7 @@ const ProjekcoNavbar = () => {
         transition: 'box-shadow 0.3s',
       }}>
         <div style={{ maxWidth: 1140, margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 68 }}>
-          <Link href="/projekco" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 10 }}>
+          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 10 }}>
             <div style={{ width: 34, height: 34, borderRadius: 8, background: '#2D2D2D', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 800, fontSize: 16 }}>P</div>
             <span style={{ color: '#1A1A1A', fontWeight: 700, fontSize: 18, letterSpacing: '-0.3px' }}>Projekco</span>
           </Link>
