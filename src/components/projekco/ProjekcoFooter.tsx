@@ -3,10 +3,12 @@ import Link from 'next/link';
 import React from 'react';
 import {
   FaChevronRight, FaEnvelope, FaFacebookF, FaInstagram,
-  FaMapMarkedAlt, FaPhoneAlt, FaTwitter, FaYoutube,
+  FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt, FaTwitter,
 } from 'react-icons/fa';
 
-const ProjekcoFooter = () => {
+const ProjekcoFooter: React.FC = () => {
+  const year = new Date().getFullYear();
+
   return (
     <>
       <style>{`
@@ -32,6 +34,7 @@ const ProjekcoFooter = () => {
         .pk-social a:hover { background: #2D2D2D; color: #fff; }
         .pk-footer-bottom { border-top: 1px solid #E8DFD0; padding: 20px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
         .pk-footer-bottom p { color: #AAA; font-size: 13px; margin: 0; }
+        .pk-footer-tagline { color: #8B7355 !important; font-weight: 600; font-style: italic; }
         .pk-footer-bottom-links { display: flex; gap: 20px; }
         .pk-footer-bottom-links a { color: #AAA; font-size: 13px; text-decoration: none; transition: color 0.2s; }
         .pk-footer-bottom-links a:hover { color: #8B7355; }
@@ -43,7 +46,7 @@ const ProjekcoFooter = () => {
         <div className="pk-footer-inner">
           <div className="pk-footer-grid">
 
-            {/* Brand */}
+            {/* Col 1 — Brand */}
             <div>
               <img
                 src="https://i.ibb.co/TD0hB3Kt/viber-image-2026-01-24-12-19-58-986.png"
@@ -51,59 +54,89 @@ const ProjekcoFooter = () => {
                 className="pk-footer-logo"
               />
               <p className="pk-footer-desc">
-                Where Service Becomes a System. Built for pest control, cleaning, and handyman businesses.
+                Projekco is an operations management platform built for service businesses —
+                pest control, cleaning, and handyman teams. Systemize your service.
               </p>
               <div className="pk-subscribe">
-                <input type="text" placeholder="Your e-mail address" />
-                <button><FaChevronRight /></button>
+                <input type="email" placeholder="Your e-mail address" />
+                <button aria-label="Subscribe"><FaChevronRight /></button>
               </div>
             </div>
 
-            {/* Services */}
+            {/* Col 2 — Platform */}
             <div>
-              <h5 className="pk-footer-title">Services</h5>
+              <h5 className="pk-footer-title">Platform</h5>
               <ul className="pk-footer-links">
-                {['Pest Control Companies', 'Cleaning Service Providers', 'Handyman & Maintenance Teams', 'Property Maintenance Companies', 'Facility Service Contractors'].map(s => (
-                  <li key={s}><Link href="/"><FaChevronRight />{s}</Link></li>
+                {[
+                  ['Features', '#features'],
+                  ["Who It's For", '#for'],
+                  ['Pricing', '#pricing'],
+                  ['Our Story', '#story'],
+                  ['Request a Demo', '#demo'],
+                ].map(([label, href]) => (
+                  <li key={label}>
+                    <Link href={href}><FaChevronRight />{label}</Link>
+                  </li>
                 ))}
               </ul>
             </div>
 
-            {/* Home */}
+            {/* Col 3 — Company */}
             <div>
-              <h5 className="pk-footer-title">Home</h5>
+              <h5 className="pk-footer-title">Company</h5>
               <ul className="pk-footer-links">
-                {[['About Us', '/'], ['Contact Us', '/'], ['Features', '#features'], ['Pricing', '#pricing'], ['Our Story', '#story']].map(([label, href]) => (
-                  <li key={label}><Link href={href}><FaChevronRight />{label}</Link></li>
+                {[
+                  ['About Projekco', '#story'],
+                  ['How It Works', '#features'],
+                  ['Contact Us', '#demo'],
+                  ['Terms & Conditions', '#'],
+                  ['Privacy Policy', '#'],
+                ].map(([label, href]) => (
+                  <li key={label}>
+                    <Link href={href}><FaChevronRight />{label}</Link>
+                  </li>
                 ))}
               </ul>
             </div>
 
-            {/* Contact */}
+            {/* Col 4 — Contact */}
             <div>
               <h5 className="pk-footer-title">Contact Us</h5>
               <ul className="pk-contact-list">
-                <li><FaMapMarkedAlt />290 Aguirre Avenue, BF Homes, Parañaque City 1720</li>
-                <li><FaPhoneAlt />+63 917 155 6521</li>
-                <li><FaPhoneAlt />+8-72166521</li>
-                <li><FaEnvelope />info@mrbutler.com.ph</li>
+                <li>
+                  <FaMapMarkerAlt />
+                  <span>Projekco — Available Worldwide<br />Remote-first Operations Platform</span>
+                </li>
+                <li>
+                  <FaEnvelope />
+                  <a href="mailto:hello@projekco.com" style={{ color: '#666', textDecoration: 'none' }}>
+                    hello@projekco.com
+                  </a>
+                </li>
+                <li>
+                  <FaPhoneAlt />
+                  <a href="tel:+18005776535" style={{ color: '#666', textDecoration: 'none' }}>
+                    +1 (800) PROJEKCO
+                  </a>
+                </li>
               </ul>
               <div className="pk-social">
-                <Link href="https://www.facebook.com/GetMrButler" target="_blank"><FaFacebookF /></Link>
-                <Link href="https://www.instagram.com/getmrbutler/" target="_blank"><FaInstagram /></Link>
-                <Link href="https://www.youtube.com/channel/UCos-l8cZagUUwNArHcI6p7A" target="_blank"><FaYoutube /></Link>
-                <Link href="https://x.com/getmrbutler" target="_blank"><FaTwitter /></Link>
+                <Link href="#" aria-label="Facebook"><FaFacebookF /></Link>
+                <Link href="#" aria-label="Twitter"><FaTwitter /></Link>
+                <Link href="#" aria-label="Instagram"><FaInstagram /></Link>
+                <Link href="#" aria-label="LinkedIn"><FaLinkedinIn /></Link>
               </div>
             </div>
           </div>
 
           {/* Bottom bar */}
           <div className="pk-footer-bottom">
-            <p>© Projekco 2024 | All Rights Reserved</p>
+            <p>© {year} Projekco. All Rights Reserved.</p>
+            <p className="pk-footer-tagline">Where Service Becomes a System.</p>
             <div className="pk-footer-bottom-links">
-              <Link href="#">Terms &amp; Condition</Link>
+              <Link href="#">Terms &amp; Conditions</Link>
               <Link href="#">Privacy Policy</Link>
-              <Link href="#">Contact Us</Link>
+              <Link href="#demo">Contact Us</Link>
             </div>
           </div>
         </div>
